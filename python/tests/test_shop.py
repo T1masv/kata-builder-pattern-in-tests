@@ -1,4 +1,5 @@
-from shop import Shop, User
+from shop import Shop
+from tests.testhelpers import create_user
 
 
 def test_happy_path(fsf_address):
@@ -18,5 +19,5 @@ def test_cannot_order_if_not_verified(fsf_address):
 
 
 def test_foreigners_must_be_foreign_fee(paris_address):
-    user = create_user(address=fsf_address)
+    user = create_user(address=paris_address)
     assert Shop.must_pay_foreign_fee(user)
