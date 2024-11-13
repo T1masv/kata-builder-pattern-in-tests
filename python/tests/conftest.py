@@ -1,12 +1,17 @@
-import pytest
-from shop import Address
+from shop import Address, User
 
-
-@pytest.fixture
-def fsf_address():
-    return Address("51 Franklin Street", "Fifth Floor", "Boston", "02110", "USA")
-
-
-@pytest.fixture
-def paris_address():
-    return Address("33 quai d'Orsay", "", "Paris", "75007", "France")
+def create_user(is_major:bool=True, name:str="bob", email:str="bob@gmail.com", has_address_local:bool=True, is_verified: bool=True):
+  address= Address(
+    line1="",
+    line2="",
+    city="",
+    zip_code="",
+    country= "USA" if has_address_local else "France"
+    )
+  return User(
+      name=name,
+      email=email,
+      age=25 if is_major else 12,
+      address=address,
+      is_verified=is_verified
+  )

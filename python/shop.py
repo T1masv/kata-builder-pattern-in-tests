@@ -16,7 +16,7 @@ class User:
     email: str
     age: int
     address: Address
-    verified: bool
+    is_verified: bool
 
 
 class Shop:
@@ -24,7 +24,7 @@ class Shop:
     def can_order(cls, user):
         if user.age <= 18:
             return False
-        if not user.verified:
+        if not user.is_verified:
             return False
         else:
             return True
