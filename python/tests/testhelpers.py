@@ -1,11 +1,11 @@
 from Shop import User
 
-def create_user_with_age_verified(age:int, vefified:bool):
+def create_user_with_age_verified(age:int=25, vefified:bool=True, name:str="bob", email:str="bob@gmail.com", address:str="1 boulevard jean jaures"):
   return User(
-      name="bob",
-      email="bob@gmail.com",
+      name=name,
+      email=email,
       age=age,
-      address="1 boulevard jean jaures",
+      address=address,
       verified=verified
   )
     
